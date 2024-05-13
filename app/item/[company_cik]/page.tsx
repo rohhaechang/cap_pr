@@ -27,9 +27,9 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   return (
     <main>
       <div>
-        <div>{items.company_cik}</div>
-        <div>{items.product_service_new}</div>
-        <div>{ items.netsales_productnregion}</div>
+        <div className="my-8">{items.company_cik}</div>
+        <div className="my-8">{items.product_service_new}</div>
+        <div className="my-8">{ items.netsales_productnregion}</div>
       `</div>
     </main>
   )
