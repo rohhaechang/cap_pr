@@ -16,4 +16,27 @@ const fetchItems = async (): Promise<ItemType[]> => {
   const items = await prisma.table1.findMany({
     where: {
       year: 2023
-    
+    },
+    select: {
+      id: true,
+      company_cik: true,
+      year: true,
+      product_service_new: true,
+      revenue_productnregion: true,
+      netsales_productnregion: true,
+    }
+  })
+
+  return items;
+}
+
+export default async function Page() {
+  const items = await fetchItems();
+  return (
+    <main>
+      <div>
+        {items.map((item) => (<ItemCard item={item} key={item.id} />))}
+      `</div>
+    </main>
+  )
+}
