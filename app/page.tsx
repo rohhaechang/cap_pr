@@ -33,10 +33,10 @@ const fetchItems = async (): Promise<ItemType[]> => {
 export default async function Page() {
   const items = await fetchItems();
   return (
-    <main>
+
       <div>
         {items.map((item) => (<ItemCard item={item} key={item.id} />))}
       `</div>
-    </main>
+
   )
 }

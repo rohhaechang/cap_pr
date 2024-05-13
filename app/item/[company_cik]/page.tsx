@@ -25,7 +25,7 @@ const fetchItemByCik = async (company_cik: string) => {
 export default async function ItemDetails({params}: {params: {company_cik: number}}) {
   const items = await fetchItemByCik(params.company_cik.toString());
   return (
-    <main>
+
       <div className=" h-96">
         <div className="min-h-10">{items.company_cik}</div>
         <div className="mt-4">주요 제품 및 신제품</div>
@@ -34,6 +34,6 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <div className="min-h-10 mt-4">{items.netsales_productnregion}</div>
         <div>{items.revenue_productnregion}</div>
       `</div>
-    </main>
+
   )
 }
