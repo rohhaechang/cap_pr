@@ -27,11 +27,12 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   return (
     <main>
       <div>
-        <div>주요 제품 및 신제품</div>
         <div className="min-h-10">{items.company_cik}</div>
-        <div>매출액</div>
-        <div className="min-h-10">{items.product_service_new}</div>
-        <div className="min-h-10">{ items.netsales_productnregion}</div>
+        <div className="mt-4">주요 제품 및 신제품</div>
+        <div className="min-h-10 mt-4">{items.product_service_new}</div>
+        <div className="mt-4">매출액</div>
+        <div className="min-h-10 mt-4">{items.netsales_productnregion}</div>
+        <div>{items.revenue_productnregion}</div>
       `</div>
     </main>
   )
