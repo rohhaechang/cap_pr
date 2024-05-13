@@ -35,7 +35,7 @@ export default async function Page() {
   return (
     <main>
       <div>
-        {items.map((item) => (<ItemCard item={item} />))}
+        {items.map((item) => (<ItemCard item={item} key={item.id} />))}
       `</div>
     </main>
   )
