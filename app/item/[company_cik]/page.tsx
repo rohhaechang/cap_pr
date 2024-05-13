@@ -29,7 +29,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
       <div>
         <div>{items.company_cik}</div>
         <div>{items.product_service_new}</div>
-        <div>{items.netsales_productnregion}</div>
+
       `</div>
     </main>
   )
