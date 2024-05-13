@@ -26,7 +26,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   const items = await fetchItemByCik(params.company_cik.toString());
   return (
     <main>
-      <div>
+      <div className=" h-96">
         <div className="min-h-10">{items.company_cik}</div>
         <div className="mt-4">주요 제품 및 신제품</div>
         <div className="min-h-10 mt-4">{items.product_service_new}</div>
