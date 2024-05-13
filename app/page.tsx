@@ -1,13 +1,42 @@
-'use client'
+import { PrismaClient, table1 } from "@prisma/client";
+import ItemCard from "./itemCard";
 
-import { useRouter } from 'next/navigation'
+const prisma = new PrismaClient();
 
-export default function Page() {
-  const router = useRouter()
+export interface ItemType {
+  id: number;
+  company_cik: number;
+  year: number;
+  product_service_new: string;
+  revenue_productnregion: string;
+  netsales_productnregion: string;
+}
 
+const fetchItems = async (): Promise<ItemType[]> => {
+  const items = await prisma.table1.findMany({
+    where: {
+      year: 2023
+    },
+    select: {
+      id: true,
+      company_cik: true,
+      year: true,
+      product_service_new: true,
+      revenue_productnregion: true,
+      netsales_productnregion: true,
+    }
+  })
+
+  return items;
+}
+
+export default async function Page() {
+  const items = await fetchItems();
   return (
-    <button type="button" onClick={() => router.push('/dashboard')}>
-      Dashboard
-    </button>
+    <main>
+      <div>
+        {items.map((item) => (<ItemCard item={item} />))}
+      `</div>
+    </main>
   )
 }
