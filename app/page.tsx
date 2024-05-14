@@ -7,9 +7,13 @@ export interface ItemType {
   id: number;
   company_cik: number;
   year: number;
-  product_service_new: string;
-  revenue_productnregion: string;
-  netsales_productnregion: string;
+  item_1: string;
+  item_2: string;
+  item_3: string;
+  item_5: string;
+  item_7: string;
+  item_7a: string;
+  item_8: string;
 }
 
 const fetchItems = async (): Promise<ItemType[]> => {
@@ -21,9 +25,13 @@ const fetchItems = async (): Promise<ItemType[]> => {
       id: true,
       company_cik: true,
       year: true,
-      product_service_new: true,
-      revenue_productnregion: true,
-      netsales_productnregion: true,
+      item_1: true,
+      item_2: true,
+      item_3: true,
+      item_5: true,
+      item_7: true,
+      item_7a: true,
+      item_8: true
     }
   })
 

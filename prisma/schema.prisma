@@ -11,7 +11,11 @@ model table1 {
   id                      Int    @id @default(autoincrement())
   company_cik             Int
   year                    Int
-  product_service_new     String
-  revenue_productnregion  String
-  netsales_productnregion String
+  item_1 String
+  item_2 String
+  item_3 String
+  item_5 String
+  item_7 String
+  item_7a String
+  item_8 String
 }
