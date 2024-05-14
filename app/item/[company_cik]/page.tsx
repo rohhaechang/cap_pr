@@ -44,7 +44,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <div className="mt-4">item_1</div>
         <div>product: {item_1["products"]}</div>
         <div>service: {item_1["service"]}</div>
-        {/* ({item_1["new_product"]} ? <div>new product: {item_1["new_product"]}</div> : null) */}
+        ({item_1["new_product"]} ? <div>new product: {item_1["new_product"]}</div> : null)
         <div className="mt-4">item_2</div>
 
         <div className="mt-4">item_3</div>
