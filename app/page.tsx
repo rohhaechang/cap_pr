@@ -18,7 +18,9 @@ export interface ItemType {
 
 const fetchItems = async (): Promise<ItemType[]> => {
   const items = await prisma.table1.findMany({
+    where: {
 
+    },
     select: {
       id: true,
       company_cik: true,
