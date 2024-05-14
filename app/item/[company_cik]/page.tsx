@@ -72,7 +72,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
 
       <div className=" h-96">
         <div className="min-h-10">{items.company_cik}</div>
-      <div className=" text-lg">item_1</div>
+      <div className=" text-green-500">item_1</div>
         <div>
             {item_1['products'] ? <div><b>products:</b> {item_1['products']}</div> : <div>products: none</div>}
         </div>
