@@ -72,28 +72,28 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
 
       <div className=" h-96">
         <div className="min-h-10">{items.company_cik}</div>
-      <div className="mt-4">item_1</div>
+      <div className=" text-lg">item_1</div>
         <div>
-            {item_1['products'] ? <div>products: {item_1['products']}</div> : <div>products: none</div>}
+            {item_1['products'] ? <div><b>products:</b> {item_1['products']}</div> : <div>products: none</div>}
         </div>
         <div>
-          {item_1['service'] ? <div>service: {item_1['service']}</div> : <div>service: none</div>}
+          {item_1['service'] ? <div><b>service:</b> {item_1['service']}</div> : <div>service: none</div>}
         </div>
         <div>
-          {item_1['new_product'] ? <div>new product: {item_1['new_product']}</div> : <div>new product: none</div>}
+          {item_1['new_product'] ? <div><b>new product:</b> {item_1['new_product']}</div> : <div>new product: none</div>}
         </div>
-        <div className=" f">item_2</div>
+        <div className=" text-lg">item_2</div>
 
-        <div className="mt-4">item_3</div>
+        <div className="text-lg">item_3</div>
 
-        <div className="mt-4">item_5</div>
+        <div className="text-lg">item_5</div>
 
-        <div className="mt-4">item_7</div>
+        <div className="text-lg">item_7</div>
 
-        <div className="mt-4">item_7A</div>
-        <div>interest_rate_risk: {item_7a['interest_rate_risk']}</div>
-        <div>Foreign_Exchange_Risk: {item_7a['Foreign_Exchange_Risk']}</div>
-        <div className="mt-4">item_8</div>
+        <div className="text-lg">item_7A</div>
+        <div><b>interest_rate_risk:</b> {item_7a['interest_rate_risk']}</div>
+        <div><b>Foreign_Exchange_Risk:</b> {item_7a['Foreign_Exchange_Risk']}</div>
+        <div className="text-lg">item_8</div>
 
       </div>
 
