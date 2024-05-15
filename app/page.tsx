@@ -46,7 +46,7 @@ export default async function Page() {
 
   return (
     <main>
-      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)"}}>
+      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px"}}>
         {items.map((item) => (<ItemCard item={item} key={item.id} />))}
       </div>
     </main>
