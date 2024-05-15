@@ -46,14 +46,16 @@ const fetchItems = async (): Promise<ItemType[]> => {
 export default async function Page() {
   const [query, setQuery] = useState<string>('');
   const items = await fetchItems();
+  function handleQuery(value: any) {
+    console.log(value)
+  }
 
 
 
   return (
     <main>
       <div>
-        <input type="text" placeholder="검색어를 입력하세요" value={query} onChange={() => setQuery} />
-        <Link href={`/item/${query}`}><span>검색</span></Link>
+        <input type="text" placeholder="검색어를 입력하세요" value={query} onChange={handleQuery} />
       </div>
       <div>
         {items.map((item) => (<ItemCard item={item} key={item.id} />))}
