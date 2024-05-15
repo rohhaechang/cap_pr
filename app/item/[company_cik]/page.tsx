@@ -100,7 +100,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <h2>item_3</h2>
           <div>
         {item_3['topics'].length > 1
-          ? item_3['topics'].map((topic: Topic) => <p key={randomInt(300)}>{Object.keys(topic)}{topic[`${Object.keys(topic)}`]}</p>)
+          ? item_3['topics'].map((topic: Topic) => <p key={randomInt(300)}><b>{Object.keys(topic)}</b>: {topic[`${Object.keys(topic)}`]}</p>)
           : <p>topics: none</p>}
           </div>
         <h2>item_5</h2>
@@ -110,7 +110,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <h2>item_7</h2>
           <div>
         {item_7['topics'].length > 1
-          ? <p>잘 불러와짐</p>
+          ? item_7['topics'].map((topic: Topic) => <p key={randomInt(300)}><b>{Object.keys(topic)}</b>: {topic[`${Object.keys(topic)}`]}</p>)
           : <p>topics: none</p>}
           </div>
 
@@ -121,7 +121,10 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           <div>
             {item_7a['Foreign_Exchange_Risk'] ? <p><b>Foreign_Exchange_Risk:</b> {item_7a['Foreign_Exchange_Risk']}</p> : <p>Foreign_Exchange_Risk: none</p>}
           </div>
-        <h2>item_8</h2>
+      <h2>item_8</h2>
+      <div>
+        {Object.keys(item_8['net_sales_products'])}
+        </div>
         <div></div>
       </div>
 
