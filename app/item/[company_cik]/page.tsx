@@ -130,20 +130,20 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
             {item_2['facility'] ? <p><b>facility:</b> {item_2['facility']}</p> : <p>facility: none</p>}
           </div>
         <h2>item_3</h2>
-          <div>
-        {item_3['topics'].length > 1 && Array.isArray(item_3['topics'])
+      <div>
+        {Array.isArray(item_3['topics']) ? item_3['topics'].length > 1
           ? item_3['topics'].map((topic: Topic) => <p key={randomInt(300)}><b>{Object.keys(topic)}</b>: {topic[`${Object.keys(topic)}`]}</p>)
-          : <p>topics: none</p>}
+          : <p>topics: none</p> : <p></p>}
           </div>
         <h2>item_5</h2>
           <div>
             {item_5['summary'] ? <p><b>stock summary:</b> {item_5['summary']}</p> : <p>stock summary: none</p>}
           </div>
         <h2>item_7</h2>
-          <div>
-        {item_7['topics'].length > 1 && Array.isArray(item_7['topics'])
+      <div>
+        {Array.isArray(item_7['topics']) ? item_7 && item_7['topics'].length > 1 && Array.isArray(item_7['topics'])
           ? item_7['topics'].map((topic: Topic) => <p key={randomInt(300)}><b>{Object.keys(topic)}</b>: {topic[`${Object.keys(topic)}`]}</p>)
-          : <p>topics: none</p>}
+          : <p>topics: none</p> : <p></p>}
           </div>
 
         <h2>item_7A</h2>
@@ -155,7 +155,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
       <h2>item_8</h2>
       <div>
-        {item_8 != 'error' && Array.isArray(item_8['net_sales_products'])
+        {item_8 && item_8 != 'error' && Array.isArray(item_8['net_sales_products'])
           ? <table border={1} style={{ width: '70%', marginBottom: '100px'}}>
             <caption>net sales by products</caption>
             <thead>
