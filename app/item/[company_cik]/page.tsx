@@ -127,7 +127,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
       <h2>item_8</h2>
       <div>
         {item_8 != 'error'
-          ? <div></div>
+          ? <table><thead><tr><th>Category</th>{Object.keys(item_8['net_sales_products']).map((year) => (<th key={randomInt(300)}>{ year}</th>))}</tr></thead></table>
           : <div>item_8 에러</div>
         }
         </div>
