@@ -11,6 +11,7 @@ model table1 {
   id                      Int    @id @default(autoincrement())
   company_cik             Int
   year                    Int
+  name String
   item_1 String
   item_2 String
   item_3 String

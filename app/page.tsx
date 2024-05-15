@@ -7,6 +7,7 @@ export interface ItemType {
   id: number;
   company_cik: number;
   year: number;
+  name: string;
   item_1: string;
   item_2: string;
   item_3: string;
@@ -25,6 +26,7 @@ const fetchItems = async (): Promise<ItemType[]> => {
       id: true,
       company_cik: true,
       year: true,
+      name: true,
       item_1: true,
       item_2: true,
       item_3: true,

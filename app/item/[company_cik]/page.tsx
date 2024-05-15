@@ -17,6 +17,7 @@ const fetchItemByCik = async (company_cik: string) => {
       id: true,
       company_cik: true,
       year: true,
+      name: true,
       item_1: true,
       item_2: true,
       item_3: true,
@@ -103,7 +104,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   return (
 
       <div>
-        <h1>{items.company_cik}</h1>
+        <h1>{items.name}</h1>
       <h2>item_1</h2>
         <div>
           {item_1['products'] ? <p><b>products:</b> {item_1['products']}</p> : <p>products: none</p>}
