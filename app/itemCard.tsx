@@ -7,9 +7,9 @@ interface Props {
 
 export default function ItemCard({ item }: Props) {
   return (
-    <div>
+    <div style={{height: "20%"}}>
       <Link href={`/item/${item.company_cik}`}>
-        <div key={item.id}>{item.name}: { item.company_cik}</div>
+        <div key={item.id}><text style={{fontSize: "20px"}}>{item.name}</text>: { item.company_cik}</div>
       </Link>
     </div>
   )
