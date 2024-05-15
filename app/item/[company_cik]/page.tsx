@@ -97,8 +97,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <div><b>interest_rate_risk:</b> {item_7a['interest_rate_risk']}</div>
         <div><b>Foreign_Exchange_Risk:</b> {item_7a['Foreign_Exchange_Risk']}</div>
       <div className="text-lg">item_8</div>
-      <div>{item8_keys}</div>
-      <div>{years}</div>
+
 
       </div>
 
