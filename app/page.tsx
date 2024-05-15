@@ -46,31 +46,14 @@ const fetchItems = async (): Promise<ItemType[]> => {
 export default async function Page() {
   const [query, setQuery] = useState<string>('');
   const items = await fetchItems();
-  const relatedSearches: any[] = []
-  items.map((item) => relatedSearches.push(`{${item.company_cik}: ${item.name}}`))
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
-    console.log(query)
-  };
-
-  const handleRelatedSearch = (relatedQuery: string) => {
-    setQuery(relatedQuery);
-  }
 
 
   return (
     <main>
       <div>
-        <input type="text" placeholder="검색어를 입력하세요" value={query} onChange={handleInputChange} />
+        <input type="text" placeholder="검색어를 입력하세요" value={query} onChange={() => setQuery} />
         <Link href={`/item/${query}`}><span>검색</span></Link>
-        <ul>
-        {relatedSearches.map((relatedQuery, index) => (
-          <li key={index} onClick={() => handleRelatedSearch(relatedQuery)}>
-            {relatedQuery}
-          </li>
-        ))}
-      </ul>
       </div>
       <div>
         {items.map((item) => (<ItemCard item={item} key={item.id} />))}
