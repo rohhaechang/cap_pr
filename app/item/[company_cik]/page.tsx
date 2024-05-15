@@ -62,11 +62,13 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   }
   try {
     if (items.item_8 != 'No Data') {
-      JSON.parse(items.item_8)
+      item_8 = JSON.parse(items.item_8)
     }
   } catch (error) {
     item_8 = "error"
   }
+
+  const item8_keys = Object.keys(item_8['net_sales_products'])
 
   return (
 
@@ -93,7 +95,8 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <div className="text-lg">item_7A</div>
         <div><b>interest_rate_risk:</b> {item_7a['interest_rate_risk']}</div>
         <div><b>Foreign_Exchange_Risk:</b> {item_7a['Foreign_Exchange_Risk']}</div>
-        <div className="text-lg">item_8</div>
+      <div className="text-lg">item_8</div>
+      <div>{item8_keys}</div>
 
       </div>
 
