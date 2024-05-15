@@ -38,7 +38,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   const items = await fetchItemByCik(params.company_cik.toString());
   let item_1, item_2, item_3, item_5, item_7, item_7a, item_8
   let years: number[] = [];
-  let categories;
+  let division: string[] = [];
 
   try {
     item_1 = JSON.parse(items.item_1)
@@ -75,8 +75,9 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   try {
     if (items.item_8 != 'No Data') {
       item_8 = JSON.parse(items.item_8)
-      categories = item_8['net_sales_products']
+      let categories = item_8['net_sales_products']
       for (const category in categories) {
+        division.push(category)
         if (categories.hasOwnProperty(category)) {
           const salesData = categories[category];
           for (const year in salesData) {
@@ -86,8 +87,10 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           }
         }
       }
-      const set = new Set(years);
-      years = Array.from(set)
+      const set1 = new Set(years);
+      const set2 = new Set(division);
+      division = Array.from(set2);
+      years = Array.from(set1);
     }
     else {
       item_8 = "error"
@@ -153,7 +156,10 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
               </tr>
             </thead>
             <tbody>
-
+              {division.map((category) => <tr key={randomInt(400)}>
+                <td key={randomInt(500)}>{category}</td>
+                {years.map((year) => (<td key={randomInt(600)}>{ item_8['net_sales_products'][category][year]}</td>))}
+              </tr>)}
             </tbody>
           </table>
           : <div>item_8 에러</div>
