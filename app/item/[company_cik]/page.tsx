@@ -127,7 +127,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
       <h2>item_8</h2>
       <div>
         {item_8 != 'error'
-          ? <Table data={item_8['net_sales_products']}></Table>
+          ? <div></div>
           : <div>item_8 에러</div>
         }
         </div>
