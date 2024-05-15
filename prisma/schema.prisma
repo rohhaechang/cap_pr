@@ -19,4 +19,5 @@ model table1 {
   item_7 String
   item_7a String
   item_8 String
+  summary String
 }
