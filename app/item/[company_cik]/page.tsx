@@ -123,7 +123,10 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
       <h2>item_8</h2>
       <div>
-        {Object.keys(item_8['net_sales_products'])}
+        {item_8 != 'error'
+          ? <p>{ item_8['net_sales_products']}</p>
+          : <div>item_8 에러</div>
+        }
         </div>
         <div></div>
       </div>
