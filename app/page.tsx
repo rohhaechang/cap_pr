@@ -15,6 +15,7 @@ export interface ItemType {
   item_7: string;
   item_7a: string;
   item_8: string;
+  summary: string;
 }
 
 const fetchItems = async (): Promise<ItemType[]> => {
@@ -33,7 +34,8 @@ const fetchItems = async (): Promise<ItemType[]> => {
       item_5: true,
       item_7: true,
       item_7a: true,
-      item_8: true
+      item_8: true,
+      summary: true,
     }
   })
 
