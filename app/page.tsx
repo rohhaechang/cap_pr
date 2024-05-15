@@ -1,8 +1,5 @@
-'use client'
 import { PrismaClient, table1 } from "@prisma/client";
 import ItemCard from "./itemCard";
-import { useState } from "react";
-import Link from "next/link";
 
 const prisma = new PrismaClient();
 
@@ -23,7 +20,7 @@ export interface ItemType {
 const fetchItems = async (): Promise<ItemType[]> => {
   const items = await prisma.table1.findMany({
     where: {
-
+      year: 2023
     },
     select: {
       id: true,
@@ -44,20 +41,12 @@ const fetchItems = async (): Promise<ItemType[]> => {
 }
 
 export default async function Page() {
-  const [query, setQuery] = useState<string>('');
+
   const items = await fetchItems();
-  function handleQuery(value: any) {
-    console.log(value)
-  }
-
-
 
   return (
     <main>
-      <div>
-        <input type="text" placeholder="검색어를 입력하세요" value={query} onChange={handleQuery} />
-      </div>
-      <div>
+      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)"}}>
         {items.map((item) => (<ItemCard item={item} key={item.id} />))}
       </div>
     </main>
