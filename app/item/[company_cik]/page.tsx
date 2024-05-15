@@ -44,37 +44,43 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   try {
     item_1 = JSON.parse(items.item_1)
   } catch (error) {
+    console.log(error)
     item_1 = "error"
   }
 
   try {
     item_2 = JSON.parse(items.item_2)
   } catch (error) {
+    console.log(error)
     item_2 = "error"
   }
   try {
     item_3 = JSON.parse(items.item_3)
 
   } catch (error) {
+    console.log(error)
     item_3 = "error"
   }
   try {
     item_5 = JSON.parse(items.item_5)
   } catch (error) {
+    console.log(error)
     item_5 = "error"
   }
   try {
     item_7 = JSON.parse(items.item_7)
   } catch (error) {
+    console.log(error)
     item_7 = "error"
   }
   try {
     item_7a = JSON.parse(items.item_7a)
   } catch (error) {
+    console.log(error)
     item_7a = "error"
   }
   try {
-    if (items.item_8 != 'No Data') {
+    if (items.item_8.indexOf('No Data') == -1) {
       item_8 = JSON.parse(items.item_8)
       let categories = item_8['net_sales_products']
       for (const category in categories) {
@@ -97,6 +103,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
       item_8 = "error"
     }
   } catch (error) {
+    console.log(error)
     item_8 = "error"
   }
 
