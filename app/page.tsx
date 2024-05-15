@@ -50,7 +50,8 @@ export default async function Page() {
   items.map((item) => relatedSearches.push(`{${item.company_cik}: ${item.name}}`))
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value); // 검색어 업데이트
+    setQuery(event.target.value);
+    console.log(query)
   };
 
   const handleRelatedSearch = (relatedQuery: string) => {
