@@ -94,8 +94,8 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
         <h2>item_3</h2>
           <div>
-        {Object.keys(item_3['topics']).length > 1
-          ? <p>잘 불러와짐</p>
+        {item_3['topics'].length > 1
+          ? item_3['topics'].map((topic: any) => <p>{Object.keys(topic)}</p>)
           : <p>topics: none</p>}
           </div>
         <h2>item_5</h2>
@@ -104,7 +104,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
         <h2>item_7</h2>
           <div>
-        {Object.keys(item_7['topics']).length > 1
+        {item_7['topics'].length > 1
           ? <p>잘 불러와짐</p>
           : <p>topics: none</p>}
           </div>
