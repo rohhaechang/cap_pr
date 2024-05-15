@@ -37,7 +37,7 @@ const fetchItemByCik = async (company_cik: string) => {
 export default async function ItemDetails({params}: {params: {company_cik: number}}) {
   const items = await fetchItemByCik(params.company_cik.toString());
   let item_1, item_2, item_3, item_5, item_7, item_7a, item_8
-  const years: number[] = [];
+  let years: number[] = [];
   let categories;
 
   try {
@@ -86,7 +86,11 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           }
         }
       }
-      console.log(years)
+      const set = new Set(years);
+      years = Array.from(set)
+    }
+    else {
+      item_8 = "error"
     }
   } catch (error) {
     item_8 = "error"
