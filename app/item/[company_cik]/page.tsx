@@ -95,7 +95,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
         <h2>item_3</h2>
           <div>
-        {item_3['topics']
+        {Object.keys(item_3['topics']).length > 1
           ? item_3['topics'].map((topic: any) => { <p>${topic} : ${ item_3['topics'][topic]}</p>})
           : <p>topics: none</p>}
           </div>
