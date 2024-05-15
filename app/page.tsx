@@ -1,3 +1,4 @@
+'use client'
 import { PrismaClient, table1 } from "@prisma/client";
 import ItemCard from "./itemCard";
 import { useState } from "react";
