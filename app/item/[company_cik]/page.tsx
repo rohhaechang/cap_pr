@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client"
 import { randomInt } from "crypto";
+import Table from "@/app/makeTable";
 
 const prisma = new PrismaClient();
 
@@ -30,6 +31,8 @@ const fetchItemByCik = async (company_cik: string) => {
   }
   return item;
 }
+
+
 
 export default async function ItemDetails({params}: {params: {company_cik: number}}) {
   const items = await fetchItemByCik(params.company_cik.toString());
@@ -124,7 +127,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
       <h2>item_8</h2>
       <div>
         {item_8 != 'error'
-          ? <p>에러 아닌가?</p>
+          ? <Table data={item_8['net_sales_products']}></Table>
           : <div>item_8 에러</div>
         }
         </div>
