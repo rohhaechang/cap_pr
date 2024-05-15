@@ -45,8 +45,8 @@ const fetchItems = async (): Promise<ItemType[]> => {
 export default async function Page() {
   const [query, setQuery] = useState<string>('');
   const items = await fetchItems();
-  const relatedSearches: string[] = []
-  items.map((item) => relatedSearches.push(item.name))
+  const relatedSearches: any[] = []
+  items.map((item) => relatedSearches.push(`{${item.company_cik}: ${item.name}}`))
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value); // 검색어 업데이트
