@@ -29,6 +29,7 @@ const fetchItemByCik = async (company_cik: string) => {
 export default async function ItemDetails({params}: {params: {company_cik: number}}) {
   const items = await fetchItemByCik(params.company_cik.toString());
   let item_1, item_2, item_3, item_5, item_7, item_7a, item_8
+  let item_3_array = []
   try {
     item_1 = JSON.parse(items.item_1)
   } catch (error) {
@@ -43,7 +44,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   try {
     item_3 = JSON.parse(items.item_3)
     for (const topic in item_3['topics']) {
-
+      item_3_array.push({topic: item_3['topics'][topic]})
     }
   } catch (error) {
     item_3 = "error"
@@ -95,8 +96,8 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
         <h2>item_3</h2>
           <div>
-        {Object.keys(item_3['topics']).length > 1
-          ? item_3['topics'].map((topic: any) => { <p>${topic} : ${ item_3['topics'][topic]}</p>})
+        {item_3_array.length > 1
+          ? item_3_array.map((topic: any) => <div>{topic}</div>)
           : <p>topics: none</p>}
           </div>
         <h2>item_5</h2>
