@@ -94,7 +94,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
         <h2>item_3</h2>
           <div>
-        {Object.keys(item_3).length > 1
+        {Object.keys(item_3['topics']).length > 1
           ? <p>{ item_3['topics']}</p>
           : <p>topics: none</p>}
           </div>
@@ -104,20 +104,20 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           </div>
         <h2>item_7</h2>
           <div>
-        {Object.keys(item_7).length > 1
+        {Object.keys(item_7['topics']).length > 1
           ? <p>{ item_7['topics']}</p>
           : <p>topics: none</p>}
           </div>
 
         <h2>item_7A</h2>
           <div>
-            {item_7['interest_rate_risk'] ? <p><b>interest_rate_risk:</b> {item_7['interest_rate_risk']}</p> : <p>interest_rate_risk: none</p>}
+            {item_7a['interest_rate_risk'] ? <p><b>interest_rate_risk:</b> {item_7a['interest_rate_risk']}</p> : <p>interest_rate_risk: none</p>}
           </div>
           <div>
-            {item_7['Foreign_Exchange_Risk'] ? <p><b>Foreign_Exchange_Risk:</b> {item_7['Foreign_Exchange_Risk']}</p> : <p>Foreign_Exchange_Risk: none</p>}
+            {item_7a['Foreign_Exchange_Risk'] ? <p><b>Foreign_Exchange_Risk:</b> {item_7a['Foreign_Exchange_Risk']}</p> : <p>Foreign_Exchange_Risk: none</p>}
           </div>
         <h2>item_8</h2>
-
+        <div></div>
       </div>
 
   )
