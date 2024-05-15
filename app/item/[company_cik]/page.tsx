@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client"
+import { randomInt } from "crypto";
 
 const prisma = new PrismaClient();
 
@@ -95,7 +96,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <h2>item_3</h2>
           <div>
         {item_3['topics'].length > 1
-          ? item_3['topics'].map((topic: any) => <p>{Object.keys(topic)}</p>)
+          ? item_3['topics'].map((topic: any) => <p key={randomInt(300)}>{Object.keys(topic)}</p>)
           : <p>topics: none</p>}
           </div>
         <h2>item_5</h2>
