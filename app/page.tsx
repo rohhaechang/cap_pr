@@ -1,5 +1,7 @@
 import { PrismaClient, table1 } from "@prisma/client";
 import ItemCard from "./itemCard";
+import { useState } from "react";
+import Link from "next/link";
 
 const prisma = new PrismaClient();
 
@@ -41,9 +43,33 @@ const fetchItems = async (): Promise<ItemType[]> => {
 }
 
 export default async function Page() {
+  const [query, setQuery] = useState<string>('');
   const items = await fetchItems();
+  const relatedSearches: string[] = []
+  items.map((item) => relatedSearches.push(item.name))
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value); // 검색어 업데이트
+  };
+
+  const handleRelatedSearch = (relatedQuery: string) => {
+    setQuery(relatedQuery);
+  }
+
+
   return (
     <main>
+      <div>
+        <input type="text" placeholder="검색어를 입력하세요" value={query} onChange={handleInputChange} />
+        <Link href={`/item/${query}`}><span>검색</span></Link>
+        <ul>
+        {relatedSearches.map((relatedQuery, index) => (
+          <li key={index} onClick={() => handleRelatedSearch(relatedQuery)}>
+            {relatedQuery}
+          </li>
+        ))}
+      </ul>
+      </div>
       <div>
         {items.map((item) => (<ItemCard item={item} key={item.id} />))}
       </div>
