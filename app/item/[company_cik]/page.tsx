@@ -145,7 +145,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
             <thead>
               <tr>
                 <th>Category</th>
-                {years.map((year) => <td>{year}</td>)}
+                {years.map((year) => <td key={randomInt(300)}>{year}</td>)}
               </tr>
             </thead>
             <tbody>
