@@ -148,7 +148,8 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
       <h2>item_8</h2>
       <div>
         {item_8 != 'error'
-          ? <table>
+          ? <table border={1}>
+            <caption>net sales by products</caption>
             <thead>
               <tr>
                 <th>Category</th>
