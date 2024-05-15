@@ -97,7 +97,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <h2>item_3</h2>
           <div>
         {item_3_array.length > 1
-          ? item_3_array.map((topic: any) => <div>{topic}</div>)
+          ? item_3_array.map((topic: any) => <div key={items.id}>{topic}</div>)
           : <p>topics: none</p>}
           </div>
         <h2>item_5</h2>
