@@ -42,6 +42,9 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
   }
   try {
     item_3 = JSON.parse(items.item_3)
+    for (const topic in item_3['topics']) {
+
+    }
   } catch (error) {
     item_3 = "error"
   }
@@ -68,36 +71,49 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
     item_8 = "error"
   }
 
-  const item8_keys = Object.keys(item_8['net_sales_products'])
-  const years = Object.keys(item8_keys)
 
   return (
 
-      <div className=" h-96">
-        <div className="min-h-10">{items.company_cik}</div>
-      <div className=" text-green-500">item_1</div>
+      <div>
+        <h1>{items.company_cik}</h1>
+      <h2>item_1</h2>
         <div>
-            {item_1['products'] ? <div><b>products:</b> {item_1['products']}</div> : <div>products: none</div>}
+          {item_1['products'] ? <p><b>products:</b> {item_1['products']}</p> : <p>products: none</p>}
         </div>
         <div>
-          {item_1['service'] ? <div><b>service:</b> {item_1['service']}</div> : <div>service: none</div>}
+          {item_1['service'] ? <p><b>service:</b> {item_1['service']}</p> : <p>service: none</p>}
         </div>
         <div>
-          {item_1['new_product'] ? <div><b>new product:</b> {item_1['new_product']}</div> : <div>new product: none</div>}
+          {item_1['new_product'] ? <p><b>new product:</b> {item_1['new_product']}</p> : <p>new product: none</p>}
         </div>
-        <div className=" text-lg">item_2</div>
+        <h2>item_2</h2>
+          <div>
+            {item_2['headquater'] ? <p><b>headquater:</b> {item_2['headquater']}</p> : <p>headquater: none</p>}
+          </div>
+          <div>
+            {item_2['facility'] ? <p><b>facility:</b> {item_2['facility']}</p> : <p>facility: none</p>}
+          </div>
+        <h2>item_3</h2>
+          <div>
+        {item_3['topics']
+          ? item_3['topics'].map((topic: any) => { <p>${topic} : ${ item_3['topics'][topic]}</p>})
+          : <p>topics: none</p>}
+          </div>
+        <h2>item_5</h2>
+          <div>
+            {item_5['summary'] ? <p><b>stock summary:</b> {item_5['summary']}</p> : <p>stock summary: none</p>}
+          </div>
+        <h2>item_7</h2>
 
-        <div className="text-lg">item_3</div>
 
-        <div className="text-lg">item_5</div>
-
-        <div className="text-lg">item_7</div>
-
-        <div className="text-lg">item_7A</div>
-        <div><b>interest_rate_risk:</b> {item_7a['interest_rate_risk']}</div>
-        <div><b>Foreign_Exchange_Risk:</b> {item_7a['Foreign_Exchange_Risk']}</div>
-      <div className="text-lg">item_8</div>
-
+        <h2>item_7A</h2>
+          <div>
+            {item_7['interest_rate_risk'] ? <p><b>interest_rate_risk:</b> {item_7['interest_rate_risk']}</p> : <p>interest_rate_risk: none</p>}
+          </div>
+          <div>
+            {item_7['Foreign_Exchange_Risk'] ? <p><b>Foreign_Exchange_Risk:</b> {item_7['Foreign_Exchange_Risk']}</p> : <p>Foreign_Exchange_Risk: none</p>}
+          </div>
+        <h2>item_8</h2>
 
       </div>
 
