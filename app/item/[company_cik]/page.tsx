@@ -114,11 +114,11 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
       <div>
       <h1>{items.name}</h1>
       <details>
-        <summary>요약 보기</summary>
+        <h3><summary>요약 보기</summary></h3>
           <p>{items.summary}</p>
       </details>
       <details>
-        <summary>item1 보기</summary>
+        <h3><summary>item1 보기</summary></h3>
         <div>
           {item_1['products'] ? <p><b>products:</b> {item_1['products']}</p> : <p>products: none</p>}
         </div>
@@ -128,41 +128,50 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
         <div>
           {item_1['new_product'] ? <p><b>new product:</b> {item_1['new_product']}</p> : <p>new product: none</p>}
         </div>
-
       </details>
-      <h2>item_2</h2>
+      <details>
+        <h3><summary>item_2 보기</summary></h3>
           <div>
             {item_2['headquater'] ? <p><b>headquater:</b> {item_2['headquater']}</p> : <p>headquater: none</p>}
           </div>
           <div>
             {item_2['facility'] ? <p><b>facility:</b> {item_2['facility']}</p> : <p>facility: none</p>}
           </div>
-        <h2>item_3</h2>
-      <div>
+      </details>
+      <details>
+        <h3><summary>item_3 보기</summary></h3>
+        <div>
         {Array.isArray(item_3['topics']) ? item_3['topics'].length > 1
           ? item_3['topics'].map((topic: Topic) => <p key={randomInt(300)}><b>{Object.keys(topic)}</b>: {topic[`${Object.keys(topic)}`]}</p>)
           : <p>topics: none</p> : <p></p>}
           </div>
-        <h2>item_5</h2>
-          <div>
+      </details>
+      <details>
+        <h3><summary>item_5 보기</summary></h3>
+        <div>
             {item_5['summary'] ? <p><b>stock summary:</b> {item_5['summary']}</p> : <p>stock summary: none</p>}
           </div>
-        <h2>item_7</h2>
-      <div>
+      </details>
+      <details>
+        <h3><summary>item_7 보기</summary></h3>
+        <div>
         {Array.isArray(item_7['topics']) ? item_7 && item_7['topics'].length > 1 && Array.isArray(item_7['topics'])
           ? item_7['topics'].map((topic: Topic) => <p key={randomInt(300)}><b>{Object.keys(topic)}</b>: {topic[`${Object.keys(topic)}`]}</p>)
           : <p>topics: none</p> : <p></p>}
           </div>
-
-        <h2>item_7A</h2>
-          <div>
+      </details>
+      <details>
+        <h3><summary>item_7a 보기</summary></h3>
+        <div>
             {item_7a['interest_rate_risk'] ? <p><b>interest_rate_risk:</b> {item_7a['interest_rate_risk']}</p> : <p>interest_rate_risk: none</p>}
           </div>
           <div>
             {item_7a['Foreign_Exchange_Risk'] ? <p><b>Foreign_Exchange_Risk:</b> {item_7a['Foreign_Exchange_Risk']}</p> : <p>Foreign_Exchange_Risk: none</p>}
           </div>
-      <h2>item_8</h2>
-      <div>
+      </details>
+      <details>
+        <h3><summary>item_8 보기</summary></h3>
+        <div>
         {item_8 != 'error'
           ? <table border={1} style={{ width: '70%', marginBottom: '100px'}}>
             <caption>net sales by products</caption>
@@ -182,8 +191,7 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
           : <div>item_8 에러</div>
         }
         </div>
-        <div></div>
+      </details>
       </div>
-
   )
 }
