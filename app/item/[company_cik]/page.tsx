@@ -113,11 +113,12 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
 
       <div>
       <h1>{items.name}</h1>
-      <div>
-        <h2>summary</h2>
-        <p>{items.summary}</p>
-      </div>
-      <h2>item_1</h2>
+      <details>
+        <summary><h2>summary</h2></summary>
+          <p>{items.summary}</p>
+      </details>
+      <details>
+        <summary><h2>item_1</h2></summary>
         <div>
           {item_1['products'] ? <p><b>products:</b> {item_1['products']}</p> : <p>products: none</p>}
         </div>
@@ -135,6 +136,8 @@ export default async function ItemDetails({params}: {params: {company_cik: numbe
             {item_2['facility'] ? <p><b>facility:</b> {item_2['facility']}</p> : <p>facility: none</p>}
           </div>
         <h2>item_3</h2>
+      </details>
+
       <div>
         {Array.isArray(item_3['topics']) ? item_3['topics'].length > 1
           ? item_3['topics'].map((topic: Topic) => <p key={randomInt(300)}><b>{Object.keys(topic)}</b>: {topic[`${Object.keys(topic)}`]}</p>)
